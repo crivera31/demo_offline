@@ -1,0 +1,43 @@
+<div class="container">
+  <button type="button" [disabled]="!isOnline" class="btn btn-primary" (click)="onSynchronize()">
+    Sincronizar data
+  </button>
+  
+
+  <div *ngIf="!isOnline" class="offline-alert">
+    You are currently offline. Some features may not be available.
+  </div>
+
+  <div class="row">
+    <form class="row g-3" [formGroup]="userForm" autocomplete="off" novalidate>
+      <div class="col-md-9">
+        <div class="col-md-4">
+          <label class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control" id="name" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">LastName</label>
+          <input type="text" formControlName="lastName" class="form-control" id="lastName" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Phone</label>
+          <input type="text" formControlName="phone" class="form-control" id="phone" />
+        </div>
+      </div>
+      <div class="col-12">
+
+        <button (click)="onSave()" [disabled]="this.userForm.invalid" 
+              class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="isSave"></span>
+          Guardar
+        </button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<div [innerHTML]="template">
+</div>
