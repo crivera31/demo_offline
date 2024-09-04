@@ -22,7 +22,7 @@ export class AppComponent implements OnInit  {
   public template: string | undefined = '';
   public userForm!: FormGroup;
   public user!: User;
-  isOnline: boolean = true;
+  isOnline: boolean = false;
   isSave = false;
 
   constructor(
@@ -34,12 +34,24 @@ export class AppComponent implements OnInit  {
 
 
   async ngOnInit(): Promise<void> {
+    // if(this._networkStatus.isOnline) {
+    //   this.isOnline = true;
+    //   console.log('Online status:', this._networkStatus.isOnline)
+    // } else {
+    //   // Si no hay conexión, carga la plantilla desde IndexedDB
+    //   this.isOnline = false;
+    //   this.template = await this._onlineOff.getTemplate('myTemplate');
+    // }
+
     this._networkStatus.onlineStatus$.subscribe(status => {
-      this.isOnline = status;
-      console.log('Online status:', status);
-      this.verify(this.isOnline);
+      // this.isOnline = status;
+      // console.log('Online status:', status);
+      this.verify(status);
     });
+
     this.initDataForm();
+
+
 
     // Cargar la plantilla al iniciar el componente
     // this.template = await this._onlineOff.getTemplate('myTemplate');
@@ -55,11 +67,13 @@ export class AppComponent implements OnInit  {
 
   async verify(data: boolean) {
     if(data) {
-      console.log('1')
-      this.template = '<h1>Mi Plantilla en Líneaaa</h1><p>Esta plantilla se cargó desde la web.</p>';
+      this.isOnline = data;
+      this.template = '';
+      // this.template = '<h1>Mi Plantilla en Líneaaa</h1><p>Esta plantilla se cargó desde la web.</p>';
       // await this._onlineOff.saveTemplate('myTemplate', this.template);
     } else {
       console.log('2')
+      this.isOnline = data;
       // Si no hay conexión, carga la plantilla desde Dexie
       this.template = await this._onlineOff.getTemplate('myTemplate');
     }
