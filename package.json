@@ -1,12 +1,14 @@
 {
   "name": "demo",
   "version": "0.0.0",
+  "homepage": "https://crivera31.github.io/demo_offline",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "npm run build && gh-pages -d dist/demo"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +22,7 @@
     "@angular/router": "~13.3.0",
     "demo": "file:",
     "dexie": "^4.0.8",
+    "gh-pages": "^6.1.1",
     "ng-connection-service": "^9.0.3",
     "rxjs": "~7.5.0",
     "sql.js": "^1.11.0",
