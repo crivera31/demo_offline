@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@angular/service-worker": "~13.3.0",
+    "@schematics/angular": "^18.2.3",
     "demo": "file:",
     "dexie": "^4.0.8",
     "gh-pages": "^6.1.1",
@@ -31,6 +33,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.11",
+    "@angular-devkit/core": "^18.2.3",
+    "@angular-devkit/schematics": "^18.2.3",
     "@angular/cli": "~13.3.11",
     "@angular/compiler-cli": "~13.3.0",
     "@types/jasmine": "~3.10.0",
