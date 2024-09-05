@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { OffLineService } from './off-line.service';
-import Dexie from 'dexie';
 
 interface User {
   name: string,
   lastName: string,
   phone: string,
-  id?: number
+  id?: number,
+  email: string,
+  subject: string,
+  message: string
 }
 
 @Injectable({
@@ -21,10 +22,17 @@ export class RestApiService {
 
   create(data: User) {
     const url = this._url + `/api/v1/users`;
-    return this._http.post<User>(url, data)
+    return this._http.post<User>(url, data);
   }
 
-  delete() {
+  getAll() {
+    const url = this._url + `/api/v1/users`;
+    return this._http.get<User[]>(url);
+  }
+
+  delete(id: string) {
+    const url = this._url + `/api/v1/users/`+id;
+    return this._http.delete(url);
   }
 
 }

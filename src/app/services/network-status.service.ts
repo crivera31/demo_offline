@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, merge, fromEvent, mapTo, startWith, of, map } from 'rxjs';
+import { Observable, merge, fromEvent, startWith, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,8 @@ export class NetworkStatusService {
 
 
     this.onlineStatus$ = merge(
-      fromEvent(window, 'online').pipe(mapTo(true)),
-      fromEvent(window, 'offline').pipe(mapTo(false))
+      fromEvent(window, 'online').pipe(map(() => true)),
+      fromEvent(window, 'offline').pipe(map(() => false))
     ).pipe(
       startWith(navigator.onLine) // Emit the initial status
     );
