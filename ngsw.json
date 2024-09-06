@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1725602991205,
+  "timestamp": 1725603621418,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -45,7 +45,8 @@
     {
       "name": "data-api",
       "patterns": [
-        "https:\\/\\/crivera31\\.github\\.io\\/demo_offline\\/"
+        "https:\\/\\/66d7af3737b1cadd80520f83\\.mockapi\\.io",
+        "https:\\/\\/66d7af3737b1cadd80520f83\\.mockapi\\.io\\/api\\/v1\\/users"
       ],
       "strategy": "freshness",
       "maxSize": 5,
