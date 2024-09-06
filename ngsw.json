@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1725602553910,
+  "timestamp": 1725602991205,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -19,9 +19,7 @@
         "/runtime.233eba379154c253.js",
         "/styles.1ce0a9d2ecee57cf.css"
       ],
-      "patterns": [
-        "https:\\/\\/crivera31\\.github\\.io\\/demo_offline\\/"
-      ]
+      "patterns": []
     },
     {
       "name": "assets",
@@ -43,7 +41,22 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "data-api",
+      "patterns": [
+        "https:\\/\\/crivera31\\.github\\.io\\/demo_offline\\/"
+      ],
+      "strategy": "freshness",
+      "maxSize": 5,
+      "maxAge": 3000000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
   "hashTable": {
     "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
