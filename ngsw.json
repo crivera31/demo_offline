@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1725574418154,
+  "timestamp": 1725602553910,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -19,7 +19,9 @@
         "/runtime.233eba379154c253.js",
         "/styles.1ce0a9d2ecee57cf.css"
       ],
-      "patterns": []
+      "patterns": [
+        "https:\\/\\/crivera31\\.github\\.io\\/demo_offline\\/"
+      ]
     },
     {
       "name": "assets",
