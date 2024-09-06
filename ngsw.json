@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1725603621418,
+  "timestamp": 1725604139810,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -38,13 +38,16 @@
         "/assets/icons/icon-72x72.png",
         "/assets/icons/icon-96x96.png"
       ],
-      "patterns": []
+      "patterns": [
+        "https:\\/\\/cdn\\.jsdelivr\\.net\\/npm\\/bootstrap@5\\.3\\.1\\/dist\\/css\\/bootstrap\\.min\\.css"
+      ]
     }
   ],
   "dataGroups": [
     {
       "name": "data-api",
       "patterns": [
+        "https:\\/\\/crivera31\\.github\\.io\\/demo_offline\\/",
         "https:\\/\\/66d7af3737b1cadd80520f83\\.mockapi\\.io",
         "https:\\/\\/66d7af3737b1cadd80520f83\\.mockapi\\.io\\/api\\/v1\\/users"
       ],
